@@ -1,0 +1,165 @@
+@charset "UTF-8"
+
+$color_text: #333
+$color_a_text: #7C5119
+$color_background: #f6f7fb
+$color_white: #fff
+$color_gray: #aaa
+$color_maindish: #ffc0cb
+$color_appetizer: #76c047
+$color_column: #fff100
+$color_breaktime: #c1efff
+
+/*commonly*/
+html
+	font-size: 62.5%
+*,*::before,*::after
+	box-sizing: border-box
+body
+	padding: 30px
+	background-color: $color_background
+	color: $color_text
+	font-size: 1.2rem
+	font-family: "Hiragino Kaku Gothic ProN","Microsoft JhengHei", Meiryo, sans-serif
+a:link, a:visited, a:hover, a:active
+	color: $color_a_text
+	text-decoration: none
+
+.item
+	width: 180px
+	padding: 8px
+	margin-bottom: 4px
+	border-bottom: 3px solid
+	border-radius: 5px
+	background-color: $color_white
+	overflow: hidden
+	.image
+		position: relative
+		img
+			width: 100%
+			display: block
+	.category
+		margin: 15px 9px 10px
+		color: $color_gray
+		letter-spacing: 1px
+		font-family: "Trebuchet MS","Hiragino Kaku Gothic ProN","Microsoft JhengHei", Meiryo, sans-serif
+		&::before
+			content: ""
+			display: inline-block //使元素可以設定寬與高,並且不換行
+			width: 19px
+			height: 19px
+			margin-right: 5px
+			border-radius: 50%
+			border: 2px solid
+			vertical-align: -5px
+	.description
+		margin: 10px
+		line-height: 1.5
+	>a
+		display: block //使元素可以設定內距與外距
+		margin: -8px -8px -11px //使a元素的範圍擴展到外側
+		padding: 8px 8px 11px //使a元素的負邊距可以保留寬度
+		border-radius: inherit //繼承.item的值
+		color: #777
+		transition: 0.3s 
+		.image
+			&::before //設定image的黑色色塊
+				content: ""
+				display: block
+				position: absolute
+				background-color: rgba(0,0,0,0.5)
+				top: 0
+				left: 0
+				bottom: 0
+				right: 0
+				opacity: 0
+				transition: opacity 0.3s liner
+			&::after
+				display: block
+				content: "MORE"
+				width: 100px
+				border: 3px solid $color_white
+				position: absolute
+				padding: 8px
+				color: $color_white
+				top: 50%
+				left: 150%
+				margin-top: -19px
+				margin-left: -50px
+				text-align: center
+				letter-spacing: 3px
+				font-size: 1.6rem
+				font-family: "Trebuchet MS","Hiragino Kaku Gothic ProN","Microsoft JhengHei", Meiryo, sans-serif
+				opacity: 0
+				transition: all 0.3s ease-in-out
+		&:hover
+			opacity: 0.8
+			box-shadow: 0 0 6px -1px rgba(0,0,0,0.3)
+			.image::before
+				opacity: 1
+			.image::after
+				left: 50%
+				opacity: 1
+				
+
+.item-maindish
+	.category::before,&
+		border-color: $color_maindish
+.item-appetizer
+	.category::before,&
+		border-color: $color_appetizer
+.item-column
+	.category::before,&
+		border-color: $color_column
+.item-breaktime
+	.category::before,&
+		border-color: $color_breaktime
+.item-m
+	width: 364px
+	// .image
+	// 	height: 146px
+	// >a::before
+	// 	height: 146px
+	// >a::after
+	// 	top: 62px
+.item-l
+	width: 732px
+	// .image
+	// 	height: 403px
+	// >a::before
+	// 	height: 403px
+	// >a::after
+	// 	top: 190.5px
+
+
+.header
+	padding: 25px 0
+	text-align: center
+	border-bottom: none
+.logo
+	width: 136px
+	height: 136px
+	transition: all 0.3s
+	&:hover
+		-webkit-transform: rotate(360deg)
+		-ms-transform: rotate(360deg)
+		transform: rotate(360deg)
+.nav
+	margin: 35px auto 10px
+.nav-item
+	margin-top: 20px
+	text-align: center
+	letter-spacing: 1px
+	font-weight: bold
+	font-size: 1.3rem
+	a
+		display: inline-block //可以讓a的寬度跟文字一樣
+		&::after
+			content: ""
+			display: block
+			margin: 6px auto 0
+			border-bottom: 1px solid $color_a_text
+			width: 0
+			transition: 0.3s ease-in-out
+		&:hover::after
+			width: 100%

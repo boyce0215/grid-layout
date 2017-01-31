@@ -1,0 +1,147 @@
+/*commonly */
+html {
+  font-size: 62.5%; }
+
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+body {
+  padding: 30px;
+  background-color: #f6f7fb;
+  color: #333;
+  font-size: 1.2rem;
+  font-family: "Hiragino Kaku Gothic ProN", "Microsoft JhengHei", Meiryo, sans-serif; }
+
+a:link, a:visited, a:hover, a:active {
+  color: #7C5119;
+  text-decoration: none; }
+
+.item {
+  width: 180px;
+  padding: 8px;
+  margin-bottom: 4px;
+  border-bottom: 3px solid;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden; }
+  .item .image {
+    position: relative; }
+    .item .image img {
+      width: 100%;
+      display: block; }
+  .item .category {
+    margin: 15px 9px 10px;
+    color: #aaa;
+    letter-spacing: 1px;
+    font-family: "Trebuchet MS", "Hiragino Kaku Gothic ProN", "Microsoft JhengHei", Meiryo, sans-serif; }
+    .item .category::before {
+      content: "";
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      margin-right: 5px;
+      border-radius: 50%;
+      border: 2px solid;
+      vertical-align: -5px; }
+  .item .description {
+    margin: 10px;
+    line-height: 1.5; }
+  .item > a {
+    display: block;
+    margin: -8px -8px -11px;
+    padding: 8px 8px 11px;
+    border-radius: inherit;
+    color: #777;
+    transition: 0.3s; }
+    .item > a .image::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.5);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity 0.3s liner; }
+    .item > a .image::after {
+      display: block;
+      content: "MORE";
+      width: 100px;
+      border: 3px solid #fff;
+      position: absolute;
+      padding: 8px;
+      color: #fff;
+      top: 50%;
+      left: 150%;
+      margin-top: -19px;
+      margin-left: -50px;
+      text-align: center;
+      letter-spacing: 3px;
+      font-size: 1.6rem;
+      font-family: "Trebuchet MS", "Hiragino Kaku Gothic ProN", "Microsoft JhengHei", Meiryo, sans-serif;
+      opacity: 0;
+      transition: all 0.3s ease-in-out; }
+    .item > a:hover {
+      opacity: 0.8;
+      box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.3); }
+      .item > a:hover .image::before {
+        opacity: 1; }
+      .item > a:hover .image::after {
+        left: 50%;
+        opacity: 1; }
+
+.item-maindish .category::before, .item-maindish {
+  border-color: #ffc0cb; }
+
+.item-appetizer .category::before, .item-appetizer {
+  border-color: #76c047; }
+
+.item-column .category::before, .item-column {
+  border-color: #fff100; }
+
+.item-breaktime .category::before, .item-breaktime {
+  border-color: #c1efff; }
+
+.item-m {
+  width: 364px; }
+
+.item-l {
+  width: 732px; }
+
+.header {
+  padding: 25px 0;
+  text-align: center;
+  border-bottom: none; }
+
+.logo {
+  width: 136px;
+  height: 136px;
+  transition: all 0.3s; }
+  .logo:hover {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); }
+
+.nav {
+  margin: 35px auto 10px; }
+
+.nav-item {
+  margin-top: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.3rem; }
+  .nav-item a {
+    display: inline-block; }
+    .nav-item a::after {
+      content: "";
+      display: block;
+      margin: 6px auto 0;
+      border-bottom: 1px solid #7C5119;
+      width: 0;
+      transition: 0.3s ease-in-out; }
+    .nav-item a:hover::after {
+      width: 100%; }
+
+/*# sourceMappingURL=style.css.map */
